@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
-const dbConnection = require('./database');
+const dbConnection = require('../database');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const app = express();
@@ -15,10 +15,7 @@ var cookieParser = require('cookie-parser');
 var PORT = process.env.PORT || 3000;
 
 // Route requires
-
-const user = require('./routes/user');
-
-const yelp = require('./routes/yelp');
+app.use(routes);
 
 // MIDDLEWARE
 app.use(morgan('dev'));
@@ -77,7 +74,7 @@ app.use(passport.session());
 app.use('/user', user);
 
 // Yelp route
-app.use('/yelp', yelp);
+//app.use('/yelp', yelp);
 
 // Starting Server
 app.listen(PORT, () => {
