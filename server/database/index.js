@@ -21,4 +21,4 @@ mongoose.connect(uri).then(
   );
 
 
-module.exports = mongoose.connection
+module.exports = mongoose.connection;
