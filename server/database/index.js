@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise
 
 //your local database url
 //27017 is the default mongoDB port
-const uri = 'mongodb://localhost:27017/simple-mern-passport' 
+const uri = 'mongodb://fitnessfinder:fitnessfinder123@ds119853.mlab.com:19853/heroku_lc6r3nsr' 
 
 mongoose.connect(uri).then(
     () => { 
